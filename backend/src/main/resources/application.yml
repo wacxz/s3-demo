@@ -1,0 +1,22 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: s3-demo
+  web:
+    resources:
+      static-locations: classpath:/static/
+  mvc:
+    static-path-pattern: /**
+
+minio:
+  endpoint: {MINIO_ENDPOINT: http://localhost:9000}
+  access-key: {MINIO_ACCESS_KEY: minio}
+  secret-key: {MINIO_SECRET_KEY: minio123}
+  bucket: {MINIO_BUCKET: s3-demo}
+#  region: us-east-1
+
+logging:
+  level:
+    com.example.s3demo: DEBUG 
